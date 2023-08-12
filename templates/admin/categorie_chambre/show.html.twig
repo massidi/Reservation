@@ -1,0 +1,30 @@
+{% extends '../../base.html.twig' %}
+
+{% block title %}CategorieChambre{% endblock %}
+
+{% block body %}
+    <h1>CategorieChambre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ categorie_chambre.id }}</td>
+            </tr>
+            <tr>
+                <th>CategoryName</th>
+                <td>{{ categorie_chambre.categoryName }}</td>
+            </tr>
+            <tr>
+                <th>Catdescription</th>
+                <td>{{ categorie_chambre.catdescription }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categorie_chambre_index') }}">back to list</a>
+
+    <a href="{{ path('app_categorie_chambre_edit', {'id': categorie_chambre.id}) }}">edit</a>
+
+    {{ include('categorie_chambre/_delete_form.html.twig') }}
+{% endblock %}

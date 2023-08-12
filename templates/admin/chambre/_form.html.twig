@@ -1,0 +1,84 @@
+{{ form_start(form) }}
+
+
+
+<div class="row">
+    <div class="col col-md-6">
+        {{ form_label(form.chamtype, 'Type de Chambre', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.chamtype, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="ol col-md-6">
+        {{ form_label(form.prix, 'Prix par Nuit', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        {{ form_label(form.chamdescription, 'Chambre Description', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.chamdescription, {'attr': {'class': 'form-control'}}) }}
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="ol col-md-6">
+        {{ form_label(form.nbrlit, 'Nombre de lits', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.nbrlit, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mol col-md-6">
+        {{ form_label(form.CategorieChambre, 'Choisir la catagorie', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.CategorieChambre, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col col-md-12">
+        {{ form_label(form.Equipement, 'Choisir  Equipement', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.Equipement, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        {{ form_label(form.Images,'Charger la Photo', {'label_attr': {'class': 'form-label','for':'formFile'}}) }}
+
+        {{ form_row(form.Images, {'attr': {'class': 'form-control', 'type': 'file', 'id': 'formFile'}}) }}
+    </div>
+</div>
+
+{#<ul class="tags">#}
+{#    {% for tag in form.Images %}#}
+{#        <li>{{ form_row(tag.imageFile) }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+
+{#<div class="col-md-12" id="chambre_Images">#}
+{#    {% for imageForm in form.Images %}#}
+{#        <div>#}
+{#            {{ form_row(imageForm.imageFile, {'attr': {'class': 'form-control', 'type': 'file', 'id': 'formFile'}}) }}#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#</div>#}
+
+{#{{ form_row(form.Images, {'attr': {'class': 'form-control', 'type': 'file', 'id': 'formFile'}}) }}#}
+{#<div class="row">#}
+{#<div class="mb-3">#}
+{#    <label for="formFile" class="form-label">Default file input example</label>#}
+{#    <input class="form-control" type="file" id="formFile">#}
+{#</div>#}
+{#</div>#}
+<div class="row mt-3">
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+</div>
+
+
+{{ form_end(form) }}

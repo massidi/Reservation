@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Edit Chambre{% endblock %}
+
+{% block content %}
+    <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+        <div class="card-body px-4 py-3">
+            <div class="row align-items-center">
+                <div class="col-9">
+                    <h4 class="fw-semibold mb-8">Modifier une Chambre</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="text-muted text-decoration-none"
+                                                           href="">Creation</a></li>
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a href="{{ path('app_admin_chambre_index') }}">
+                                    Liste chambre
+                                </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 d-flex align-items-stretch">
+            <div class="card w-100">
+                <div class="card-body p-4">
+                    {{ include('admin/chambre/_form.html.twig', {'button_label': 'Modifier'}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{#    {{ include('chambre/_form.html.twig', {'button_label': 'Update'}) }}#}
+
+{#    <a href="{{ path('app_chambre_index') }}">back to list</a>#}
+
+    {{ include('admin/chambre/_delete_form.html.twig') }}
+{% endblock %}

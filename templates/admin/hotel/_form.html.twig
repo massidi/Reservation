@@ -1,0 +1,26 @@
+
+{{ form_start(form) }}
+<form method="post">
+    <div class="mb-3">
+        {{ form_label(form.hotelnom, 'Nom de l\'hotel', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.hotelnom, {'attr': {'class': 'form-control', 'id': 'exampleInputEmail1'}}) }}
+{#        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>#}
+    </div>
+    <div class="mb-3">
+        {{ form_label(form.hoteladresse, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.hoteladresse, {'attr': {'class': 'form-control', 'id': 'exampleInputPassword1'}}) }}
+    </div>
+    <div class="mb-3 ">
+        {{ form_label(form.hoteldescription, 'Description', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.hoteldescription, {'attr': {'class': 'form-control', 'id': 'exampleCheck1'}}) }}
+
+    </div>
+    <div class="mb-3 ">
+        {{ form_label(form.hotelclasse, 'Classe', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.hotelclasse, {'attr': {'class': 'form-control', 'id': 'exampleCheck1'}}) }}
+
+    </div>
+    <button type="submit" class="btn btn-primary">{{ button_label|default('Enregistrement') }}</button>
+
+    {{ form_end(form) }}
+</form>

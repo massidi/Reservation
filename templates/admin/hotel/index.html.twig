@@ -1,0 +1,50 @@
+{% extends 'admin.html.twig' %}
+
+{# {% block title %}Hotel index{% endblock %} #}
+
+{% block content %}
+
+
+    <a class="btn btn-primary" type="button" href="{{ path('app_admin_hotel_create') }}">Nouvelle Creation</a>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Adresse Hotel</th>
+            <th>Description</th>
+            <th>Classe</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for hotel in hotels %}
+            <tr>
+                <td>{{ hotel.id }}</td>
+                <td>{{ hotel.hotelnom }}</td>
+                <td>{{ hotel.hoteladresse }}</td>
+                <td>{{ hotel.hoteldescription }}</td>
+                <td>{{ hotel.hotelclasse }}</td>
+                <td class="border-bottom-0">
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="{{ path('app_admin_hotel_show', {'id': hotel.id}) }}">
+                            <span class="badge bg-danger rounded-3 fw-semibold">show</span>
+                        </a>
+                        <a href="{{ path('app_admin_hotel_edit', {'id': hotel.id}) }}">
+                            <span class="badge bg-primary rounded-3 fw-semibold">edit</span>
+                        </a>
+                    </div>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

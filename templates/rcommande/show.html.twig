@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rcommande{% endblock %}
+
+{% block body %}
+    <h1>Rcommande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rcommande.id }}</td>
+            </tr>
+            <tr>
+                <th>CommandeAt</th>
+                <td>{{ rcommande.commandeAt ? rcommande.commandeAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ rcommande.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_rcommande_index') }}">back to list</a>
+
+    <a href="{{ path('app_rcommande_edit', {'id': rcommande.id}) }}">edit</a>
+
+    {{ include('rcommande/_delete_form.html.twig') }}
+{% endblock %}
